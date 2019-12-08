@@ -1,6 +1,6 @@
 package org.squirrelframework.foundation.fsm.atm;
 
-import org.squirrelframework.foundation.fsm.annotation.ContextInsensitive;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextInsensitive;
 import org.squirrelframework.foundation.fsm.atm.ATMStateMachine.ATMState;
 import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 

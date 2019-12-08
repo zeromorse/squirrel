@@ -13,6 +13,9 @@ import com.google.common.collect.Iterators;
  *  
  * @author Henry.He
  *
+ * name：事件分配器
+ * desc：负责监听方法的注册，以及事件触发时的分配
+ * note：调停者模式
  */
 public class PolymEventDispatcher implements SquirrelComponent {
     

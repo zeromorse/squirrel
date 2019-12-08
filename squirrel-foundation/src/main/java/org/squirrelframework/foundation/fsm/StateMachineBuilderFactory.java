@@ -15,9 +15,13 @@ import org.squirrelframework.foundation.util.TypeReference;
  * 
  * @author Henry.He
  *
+ * desc：状态机构建器工厂
+ * note：代理模式
  */
 public class StateMachineBuilderFactory {
-    
+
+    // - 注解版的实现 -
+
     public static UntypedStateMachineBuilder create(Class<? extends UntypedStateMachine> stateMachineClazz) {
         return create(stateMachineClazz, new Class[0]);
     }
@@ -28,7 +32,10 @@ public class StateMachineBuilderFactory {
                 create(stateMachineClazz, Object.class, Object.class, Object.class, extraConstParamTypes);
         return create(builder);
     }
-    
+
+    /**
+     * 使用代理模式完成无类型状态机构建器的生成
+     */
     public static UntypedStateMachineBuilder create(
             final StateMachineBuilder<UntypedStateMachine, Object, Object, Object> builder) {
         return (UntypedStateMachineBuilder) Proxy.newProxyInstance(
@@ -62,7 +69,9 @@ public class StateMachineBuilderFactory {
                     }
                 });
     }
-    
+
+    // - 泛型版的实现 -
+
     public static <T extends StateMachine<T, S, E, C>, S, E, C> StateMachineBuilder<T, S, E, C> create(
             Class<? extends T> stateMachineClazz, Class<S> stateClazz, Class<E> eventClazz, Class<C> contextClazz) {
         return create(stateMachineClazz, stateClazz, eventClazz, contextClazz, new Class<?>[0]);

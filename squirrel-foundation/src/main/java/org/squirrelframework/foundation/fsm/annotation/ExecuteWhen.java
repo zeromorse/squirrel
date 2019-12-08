@@ -8,6 +8,9 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+/**
+ * desc：执行当前行为的前置条件
+ */
 @Retention(RUNTIME)
 @Target({METHOD, TYPE})
 @Documented

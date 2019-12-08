@@ -18,6 +18,8 @@ import java.lang.reflect.Method;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：动作执行服务
  */
 public interface ActionExecutionService<T extends StateMachine<T, S, E, C>, S, E, C> extends Observable {
     /**

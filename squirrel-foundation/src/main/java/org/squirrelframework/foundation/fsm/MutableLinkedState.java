@@ -11,6 +11,8 @@ import org.squirrelframework.foundation.component.SquirrelInstanceProvider;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：可修改的链接状态
  */
 public interface MutableLinkedState<T extends StateMachine<T, S, E, C>, S, E, C> extends MutableState<T, S, E, C> {
     

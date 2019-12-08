@@ -2,6 +2,9 @@ package org.squirrelframework.foundation.fsm;
 
 import java.util.List;
 
+/**
+ * desc：可修改的状态
+ */
 public interface MutableState<T extends StateMachine<T, S, E, C>, S, E, C> extends ImmutableState<T, S, E, C> {
     
     MutableTransition<T, S, E, C> addTransitionOn(E event);

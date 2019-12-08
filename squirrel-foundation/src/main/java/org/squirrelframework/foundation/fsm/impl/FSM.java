@@ -9,8 +9,15 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * desc: 状态机工厂门面
+ * note：简单工厂模式
+ */
 abstract class FSM {
 
+    /**
+     * 不需要泛型解析，也没有后处理器，所以不需要 SquirrelProvider 来构建
+     */
     static <T extends StateMachine<T, S, E, C>, S, E, C> StateContext<T, S, E, C> newStateContext(
             StateMachine<T, S, E, C> stateMachine, StateMachineData<T, S, E, C> data,
             ImmutableState<T, S, E, C> sourceState, E event, C context, 

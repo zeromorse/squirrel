@@ -1,5 +1,8 @@
 package org.squirrelframework.foundation.fsm;
 
+/**
+ * desc：默认的状态机构建器，实现在静态代理中 {@link StateMachineBuilderFactory}
+ */
 public interface UntypedStateMachineBuilder extends StateMachineBuilder<UntypedStateMachine, Object, Object, Object> {
     
     <T extends UntypedStateMachine> T newUntypedStateMachine(Object initialStateId);

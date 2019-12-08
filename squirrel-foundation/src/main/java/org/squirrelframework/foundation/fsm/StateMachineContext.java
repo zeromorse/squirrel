@@ -2,6 +2,9 @@ package org.squirrelframework.foundation.fsm;
 
 import java.util.Stack;
 
+/**
+ * desc：状态机上下文
+ */
 public class StateMachineContext {
     
     private final Object currentInstance;

@@ -12,15 +12,18 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.squirrelframework.foundation.component.SquirrelConfiguration;
 import org.squirrelframework.foundation.exception.TransitionException;
 import org.squirrelframework.foundation.fsm.StateMachineBuilderFactory;
 import org.squirrelframework.foundation.fsm.UntypedAnonymousAction;
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
 import org.squirrelframework.foundation.fsm.UntypedStateMachineBuilder;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionDecline;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionDecline;
 
 public class AsyncExectionTest {
+    private static Logger logger = LoggerFactory.getLogger(AsyncExectionTest.class);
     
     private UntypedStateMachineBuilder builder = null;
     
@@ -42,6 +45,7 @@ public class AsyncExectionTest {
     public void testTimedState() {
         final StringBuilder logger = new StringBuilder();
         // timed state must be defined before transition
+        // 定时状态内自动触发一些事件
         builder.defineTimedState("A", 10, 100, "FIRST", null);
         builder.internalTransition().within("A").on("FIRST").perform(new UntypedAnonymousAction() {
             @Override
@@ -79,7 +83,11 @@ public class AsyncExectionTest {
         fsm.fire("FIRST");
         assertEquals("C", fsm.getCurrentState());
         assertEquals("fromAToB.fromBToC", fsm.logger.toString());
+        logger.info("aToBThread = {}", fsm.fromAToBCallThread);
+        logger.info("bToCThread = {}", fsm.fromBToCCallThread);
+        logger.info("curThread = {}", Thread.currentThread());
         assertTrue(Thread.currentThread()!=fsm.fromAToBCallThread);
+        // 异步执行中调用同步的fire，同步的fire居然会在当前线程内执行
         assertTrue(Thread.currentThread()==fsm.fromBToCCallThread);
     }
     
@@ -111,6 +119,7 @@ public class AsyncExectionTest {
         try {
             fsm.fire("FIRST");
         } catch(TransitionException e) {
+            // 因为执行耗时超过超时时间，抛出超时异常
             assertTrue(e.getTargetException().getClass()==TimeoutException.class);
             return;
         }
@@ -124,6 +133,7 @@ public class AsyncExectionTest {
             @Override
             public void execute(Object from, Object to, Object event, Object context,
                     UntypedStateMachine stateMachine) {
+                logger.info("Inner Thread.currentThread() = {}", Thread.currentThread());
                 throw new IllegalArgumentException(errMsg);
             }
             
@@ -135,6 +145,7 @@ public class AsyncExectionTest {
         
         final ConcurrentSimpleStateMachine fsm = builder.newUntypedStateMachine("A");
         try {
+            logger.info("Outer Thread.currentThread() = {}", Thread.currentThread());
             fsm.fire("FIRST");
         } catch(TransitionException e) {
             assertTrue(e.getTargetException().getClass()==IllegalArgumentException.class);

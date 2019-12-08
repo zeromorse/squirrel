@@ -4,19 +4,22 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.squirrelframework.foundation.fsm.annotation.OnActionExecException;
-import org.squirrelframework.foundation.fsm.annotation.OnAfterActionExecuted;
-import org.squirrelframework.foundation.fsm.annotation.OnBeforeActionExecuted;
-import org.squirrelframework.foundation.fsm.annotation.OnStateMachineStart;
-import org.squirrelframework.foundation.fsm.annotation.OnStateMachineTerminate;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionBegin;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionDecline;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionEnd;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionException;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnActionExecException;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnAfterActionExecuted;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnBeforeActionExecuted;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnStateMachineStart;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnStateMachineTerminate;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionBegin;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionDecline;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionEnd;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionException;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Maps;
 
+/**
+ * desc：状态机性能监控
+ */
 public class StateMachinePerformanceMonitor {
     
     private final String name;

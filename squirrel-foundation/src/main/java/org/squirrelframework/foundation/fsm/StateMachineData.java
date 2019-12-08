@@ -21,6 +21,8 @@ import java.util.Map;
  *            type of Event
  * @param <C>
  *            type of Context
+ *
+ * desc：状态机数据，负责状态机数据的序列化或IO
  */
 public interface StateMachineData<T extends StateMachine<T, S, E, C>, S, E, C> extends Serializable {
     /**

@@ -6,6 +6,7 @@ import java.util.List;
  * 
  * @author Henry.He
  *
+ * desc：条件相关的工具
  */
 public class Conditions {
     

@@ -15,6 +15,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * name：SQRL后处理器提供者
+ * desc：后处理器对象的注册与获取
+ */
 public class SquirrelPostProcessorProvider implements SquirrelComponent, SquirrelSingleton {
     
     private static SquirrelPostProcessorProvider instance = new SquirrelPostProcessorProvider();
@@ -26,7 +30,8 @@ public class SquirrelPostProcessorProvider implements SquirrelComponent, Squirre
     public static void setInstance(SquirrelPostProcessorProvider instance) {
         SquirrelPostProcessorProvider.instance = instance;
     }
-    
+
+    // 类 -> 后处理器
     private Map<Class<?>, SquirrelPostProcessor<?>> postProcessorRegistry = 
             new ConcurrentHashMap<Class<?>, SquirrelPostProcessor<?>>();
     

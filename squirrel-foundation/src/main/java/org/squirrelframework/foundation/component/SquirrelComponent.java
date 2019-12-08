@@ -7,6 +7,8 @@ package org.squirrelframework.foundation.component;
  * 
  * @author Henry.He
  *
+ * name：SQRL组件
+ * desc：标记可以被 {@link SquirrelProvider} 托管的类
  */
 public interface SquirrelComponent {
 }

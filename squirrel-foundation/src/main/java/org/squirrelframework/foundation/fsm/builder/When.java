@@ -14,6 +14,8 @@ import java.util.List;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：添加一个状态迁移，From...To...On...When...Perform 子句中的一部分
  */
 public interface When<T extends StateMachine<T, S, E, C>, S, E, C> {
     

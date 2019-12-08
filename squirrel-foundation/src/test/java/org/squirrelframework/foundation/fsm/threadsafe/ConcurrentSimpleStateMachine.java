@@ -2,8 +2,8 @@ package org.squirrelframework.foundation.fsm.threadsafe;
 
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
 import org.squirrelframework.foundation.fsm.annotation.AsyncExecute;
-import org.squirrelframework.foundation.fsm.annotation.ContextInsensitive;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextInsensitive;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 @ContextInsensitive

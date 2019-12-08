@@ -10,6 +10,9 @@ import org.squirrelframework.foundation.util.ReflectUtils;
 
 import java.lang.reflect.Method;
 
+/**
+ * name：抽象被观察者
+ */
 public abstract class AbstractSubject implements Observable {
 
     private boolean notifiable = true;

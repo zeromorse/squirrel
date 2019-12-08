@@ -3,10 +3,10 @@ package org.squirrelframework.foundation.issues;
 import org.junit.*;
 import org.squirrelframework.foundation.component.SquirrelPostProcessorProvider;
 import org.squirrelframework.foundation.fsm.*;
-import org.squirrelframework.foundation.fsm.annotation.State;
-import org.squirrelframework.foundation.fsm.annotation.States;
-import org.squirrelframework.foundation.fsm.annotation.Transit;
-import org.squirrelframework.foundation.fsm.annotation.Transitions;
+import org.squirrelframework.foundation.fsm.annotation.structure.State;
+import org.squirrelframework.foundation.fsm.annotation.structure.States;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transit;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transitions;
 import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 
 import static org.hamcrest.Matchers.equalTo;

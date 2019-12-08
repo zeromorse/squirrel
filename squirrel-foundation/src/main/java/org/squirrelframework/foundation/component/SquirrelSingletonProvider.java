@@ -5,6 +5,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.google.common.base.Preconditions;
 
+/**
+ * name：SQRL单例提供器
+ * desc：单例对象的注册与获取
+ */
 public class SquirrelSingletonProvider implements SquirrelComponent, SquirrelSingleton {
 
     private static SquirrelSingletonProvider instance = new SquirrelSingletonProvider();
@@ -16,7 +20,8 @@ public class SquirrelSingletonProvider implements SquirrelComponent, SquirrelSin
     public static void setInstance(SquirrelSingletonProvider instance) {
         SquirrelSingletonProvider.instance = instance;
     }
-    
+
+    // 类 -> 实例
     private Map<String, Object> instanceRegistry = new ConcurrentHashMap<String, Object>();
     
     public <T> void register(Class<T> componentClass, Object instance) {

@@ -22,15 +22,15 @@ import org.squirrelframework.foundation.fsm.StateMachine.TransitionCompleteListe
 import org.squirrelframework.foundation.fsm.StateMachine.TransitionEndEvent;
 import org.squirrelframework.foundation.fsm.StateMachine.TransitionEndListener;
 import org.squirrelframework.foundation.fsm.StateMachine.TransitionEvent;
-import org.squirrelframework.foundation.fsm.annotation.OnAfterActionExecuted;
-import org.squirrelframework.foundation.fsm.annotation.OnBeforeActionExecuted;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionBegin;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionComplete;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionDecline;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionEnd;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
-import org.squirrelframework.foundation.fsm.annotation.Transit;
-import org.squirrelframework.foundation.fsm.annotation.Transitions;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnAfterActionExecuted;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnBeforeActionExecuted;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionBegin;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionComplete;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionDecline;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionEnd;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transit;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transitions;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 public class UntypedStateMachineTest {

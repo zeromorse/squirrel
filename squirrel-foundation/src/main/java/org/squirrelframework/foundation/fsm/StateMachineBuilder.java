@@ -11,6 +11,8 @@ import org.squirrelframework.foundation.fsm.builder.*;
  * @param <S> The type of implemented state
  * @param <E> The type of implemented event
  * @param <C> The type of implemented context
+ *
+ * desc：状态机构建门面
  */
 public interface StateMachineBuilder<T extends StateMachine<T, S, E, C>, S, E, C> {
 

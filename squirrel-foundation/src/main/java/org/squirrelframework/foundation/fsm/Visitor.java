@@ -2,6 +2,8 @@ package org.squirrelframework.foundation.fsm;
 
 /**
  * @author Henry.He
+ *
+ * note：访问者接口，用来标记访问者的行为，这里主要用来完成实例的序列化
  */
 public interface Visitor {
     

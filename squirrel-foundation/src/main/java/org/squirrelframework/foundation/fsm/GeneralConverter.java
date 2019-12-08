@@ -6,6 +6,9 @@ import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * desc：为一些常见类型提供到字符串的转化器
+ */
 public class GeneralConverter<T> implements Converter<T> {
 
     private Class<T> type;

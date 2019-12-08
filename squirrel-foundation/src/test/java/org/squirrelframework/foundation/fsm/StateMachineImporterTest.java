@@ -3,9 +3,9 @@ package org.squirrelframework.foundation.fsm;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
-import org.squirrelframework.foundation.fsm.annotation.Transit;
-import org.squirrelframework.foundation.fsm.annotation.Transitions;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transit;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transitions;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 public class StateMachineImporterTest {

@@ -17,6 +17,7 @@ import org.squirrelframework.foundation.exception.TransitionException;
 import org.squirrelframework.foundation.fsm.*;
 import org.squirrelframework.foundation.fsm.ActionExecutionService.*;
 import org.squirrelframework.foundation.fsm.annotation.*;
+import org.squirrelframework.foundation.fsm.annotation.hook.*;
 import org.squirrelframework.foundation.util.Pair;
 import org.squirrelframework.foundation.util.ReflectUtils;
 import org.squirrelframework.foundation.util.TypeReference;

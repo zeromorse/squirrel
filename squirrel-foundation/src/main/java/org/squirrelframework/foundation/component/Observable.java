@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
  * 
  * @author Henry.He
  *
+ * name：被观察者接口
  */
 public interface Observable {
 

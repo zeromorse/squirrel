@@ -8,6 +8,9 @@ import java.io.ObjectOutputStream;
 
 import org.squirrelframework.foundation.util.Base64Coder;
 
+/**
+ * desc：对象的BASE64序列化支持
+ */
 public abstract class ObjectSerializableSupport {
     
     public static String serialize(Object data) {

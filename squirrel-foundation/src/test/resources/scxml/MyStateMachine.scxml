@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml initial="A" version="1.0" xmlns="http://www.w3.org/2005/07/scxml" xmlns:sqrl="http://squirrelframework.org/squirrel">
+    <sqrl:fsm context-insensitive="true"
+        context-type="org.squirrelframework.foundation.self.model.typed.MyContext"
+        event-type="org.squirrelframework.foundation.self.model.typed.MyEvent"
+        fsm-type="org.squirrelframework.foundation.self.model.typed.MyStateMachine"
+        id="dStOnpbrfV" state-type="org.squirrelframework.foundation.self.model.typed.MyState"/>
+    <state id="B">
+        <onentry>
+            <sqrl:action content="instance#org.squirrelframework.foundation.self.model.typed.MyActions$Entry"/>
+        </onentry>
+        <transition
+            cond="instance#org.squirrelframework.foundation.self.model.typed.MyConditions$Satisfied"
+            event="bc" sqrl:priority="1" sqrl:type="EXTERNAL" target="C"/>
+        <onexit>
+            <sqrl:action content="instance#org.squirrelframework.foundation.self.model.typed.MyActions$Exit"/>
+        </onexit>
+    </state>
+    <state id="A">
+        <transition
+            cond="instance#org.squirrelframework.foundation.self.model.typed.MyConditions$Satisfied"
+            event="ab" sqrl:priority="1" sqrl:type="EXTERNAL" target="B">
+            <sqrl:action content="instance#org.squirrelframework.foundation.self.model.typed.MyActions$Transit"/>
+        </transition>
+        <transition
+            cond="instance#org.squirrelframework.foundation.fsm.Conditions$Always"
+            event="ac" sqrl:priority="1" sqrl:type="EXTERNAL" target="C">
+            <sqrl:action content="instance#org.squirrelframework.foundation.self.model.typed.MyActions$Transit"/>
+        </transition>
+        <transition
+            cond="instance#org.squirrelframework.foundation.fsm.Conditions$Always"
+            event="ad" sqrl:priority="1" sqrl:type="EXTERNAL" target="D"/>
+    </state>
+    <state id="D"/>
+    <state id="C">
+        <transition
+            cond="instance#org.squirrelframework.foundation.self.model.typed.MyConditions$Unsatisfied"
+            event="cd" sqrl:priority="1" sqrl:type="EXTERNAL" target="D">
+            <sqrl:action content="instance#org.squirrelframework.foundation.self.model.typed.MyActions$Transit"/>
+        </transition>
+    </state>
+</scxml>

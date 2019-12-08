@@ -1,5 +1,8 @@
 package org.squirrelframework.foundation.fsm;
 
+/**
+ * note：包装者模式
+ */
 public class ActionWrapper<T extends StateMachine<T, S, E, C>, S, E, C>
         implements Action<T, S, E, C> {
 

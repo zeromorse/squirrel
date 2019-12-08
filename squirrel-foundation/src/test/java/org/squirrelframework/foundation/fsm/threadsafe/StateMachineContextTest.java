@@ -10,8 +10,8 @@ import org.squirrelframework.foundation.fsm.StateMachineContext;
 import org.squirrelframework.foundation.fsm.UntypedStateMachineBuilder;
 import org.squirrelframework.foundation.fsm.annotation.AsyncExecute;
 import org.squirrelframework.foundation.fsm.annotation.ListenerOrder;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionBegin;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionBegin;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 public class StateMachineContextTest {
@@ -27,6 +27,7 @@ public class StateMachineContextTest {
         
         @AsyncExecute
         public void onAToB(String from, String to, FSMEvent event, Integer context) {
+            // 仅存在于状态机的上下文中
             currentInstance = StateMachineContext.currentInstance();
             try {
                 Thread.sleep(500);
@@ -62,13 +63,13 @@ public class StateMachineContextTest {
         
         final StateMachineSample fsm = builder.newUntypedStateMachine("D");
         fsm.addDeclarativeListener(new TestListener());
-        String expected1 = (String) fsm.test(FSMEvent.ToA, 5);
+        String expected1 = (String) fsm.test(FSMEvent.ToA, 5); // test并不会真正迁移
         System.out.println("expected1: "+expected1);
         assertThat(expected1, equalTo("A"));
         String expected2 = (String) fsm.test(FSMEvent.ToA, 11);
         System.out.println("expected2: "+expected2);
         assertThat(expected2, equalTo("B"));
-        String expected3 = (String) fsm.test(FSMEvent.ToA, 21);
+        String expected3 = (String) fsm.test(FSMEvent.ToA, 21); // 两个监听器会依次调用，直到跳到C
         System.out.println("expected3: "+expected3);
         assertThat(expected3, equalTo("C"));
     }

@@ -8,6 +8,9 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+/**
+ * desc：标记某些动作异步执行
+ */
 @Retention(RUNTIME)
 @Target({TYPE, METHOD})
 @Documented

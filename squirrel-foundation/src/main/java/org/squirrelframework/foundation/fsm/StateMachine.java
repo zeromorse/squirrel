@@ -19,6 +19,8 @@ import java.util.List;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：有限状态机
  */
 public interface StateMachine<T extends StateMachine<T, S, E, C>, S, E, C> extends Visitable, Observable {
     

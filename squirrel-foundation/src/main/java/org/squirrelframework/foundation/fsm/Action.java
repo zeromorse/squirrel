@@ -11,6 +11,8 @@ import org.squirrelframework.foundation.component.SquirrelComponent;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：动作抽象
  */
 public interface Action<T extends StateMachine<T, S, E, C>, S, E, C> extends SquirrelComponent {
     

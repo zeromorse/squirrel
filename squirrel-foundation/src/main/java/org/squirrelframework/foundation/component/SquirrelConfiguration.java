@@ -7,6 +7,10 @@ import java.util.concurrent.TimeUnit;
 
 import com.google.common.util.concurrent.MoreExecutors;
 
+/**
+ * name：SQRL配置
+ * desc：支持配置 ExecutorService 及 SchedulerService
+ */
 public class SquirrelConfiguration {
     
     public static ExecutorService getExecutor() {

@@ -11,6 +11,8 @@ import org.squirrelframework.foundation.fsm.StateMachine;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：创建单个迁移时的构建器，from...to...on...when...perform 子句中的开端
  */
 public interface ExternalTransitionBuilder<T extends StateMachine<T, S, E, C>, S, E, C> {
     /**

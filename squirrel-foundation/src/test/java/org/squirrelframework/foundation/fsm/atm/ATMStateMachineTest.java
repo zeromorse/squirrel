@@ -26,9 +26,11 @@ public class ATMStateMachineTest {
         ConverterProvider.INSTANCE.clearRegistry();
         SquirrelPostProcessorProvider.getInstance().clearRegistry();
     }
-    
+
+    // 测试方法公用对象
     private ATMStateMachine stateMachine;
-    
+
+    // 每个测试方法前执行
     @Before
     public void setup() {
         StateMachineBuilder<ATMStateMachine, ATMState, String, Void> builder = StateMachineBuilderFactory.create(
@@ -45,7 +47,8 @@ public class ATMStateMachineTest {
         
         stateMachine = builder.newStateMachine(ATMState.Idle);
     }
-    
+
+    // 每个测试方法后执行
     @After
     public void teardown() {
         if(stateMachine!=null && stateMachine.getStatus()!=StateMachineStatus.TERMINATED) {

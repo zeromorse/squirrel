@@ -18,6 +18,8 @@ import java.util.Set;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：只读的状态
  */
 public interface ImmutableState<T extends StateMachine<T, S, E, C>, S, E, C>  extends Visitable, SquirrelComponent {
     

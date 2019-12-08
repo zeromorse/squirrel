@@ -7,12 +7,12 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.squirrelframework.foundation.fsm.annotation.ContextInsensitive;
-import org.squirrelframework.foundation.fsm.annotation.State;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
-import org.squirrelframework.foundation.fsm.annotation.States;
-import org.squirrelframework.foundation.fsm.annotation.Transit;
-import org.squirrelframework.foundation.fsm.annotation.Transitions;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextInsensitive;
+import org.squirrelframework.foundation.fsm.annotation.structure.State;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.structure.States;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transit;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transitions;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 public class ExtensionMethodCallTest {

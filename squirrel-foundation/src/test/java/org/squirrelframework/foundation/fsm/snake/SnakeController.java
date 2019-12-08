@@ -5,7 +5,7 @@ import org.squirrelframework.foundation.fsm.AnonymousCondition;
 import org.squirrelframework.foundation.fsm.DotVisitor;
 import org.squirrelframework.foundation.fsm.HistoryType;
 import org.squirrelframework.foundation.fsm.TransitionType;
-import org.squirrelframework.foundation.fsm.annotation.*;
+import org.squirrelframework.foundation.fsm.annotation.structure.*;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 import org.squirrelframework.foundation.fsm.snake.SnakeController.SnakeEvent;
 import org.squirrelframework.foundation.fsm.snake.SnakeController.SnakeState;

@@ -1,5 +1,8 @@
 package org.squirrelframework.foundation.fsm;
 
+/**
+ * desc：MVEL相关
+ */
 public interface MvelScriptManager {
     
     public final static String SEPARATOR_CHARS = ":::";

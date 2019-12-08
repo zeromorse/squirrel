@@ -23,7 +23,10 @@ pom.xml.next
 release.properties
 
 *.dot
-*.scxml
 *.sqr
 *.diff
 *.patch
+
+### IDE
+.idea
+*.iml

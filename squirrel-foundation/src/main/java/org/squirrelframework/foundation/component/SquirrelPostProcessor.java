@@ -6,6 +6,8 @@ package org.squirrelframework.foundation.component;
  * @author Henry.He
  *
  * @param <T> type of object to be processed
+ *
+ * name：SQRL后处理标准
  */
 public interface SquirrelPostProcessor<T> {
 

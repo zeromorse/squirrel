@@ -6,6 +6,8 @@ package org.squirrelframework.foundation.component;
  * @author Henry.He
  *
  * @param <T> bean type
+ * name：组合版后处理标准
+ * note：合成模式
  */
 public interface CompositePostProcessor<T> extends SquirrelPostProcessor<T> {
 

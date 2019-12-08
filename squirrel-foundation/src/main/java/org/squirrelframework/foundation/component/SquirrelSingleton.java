@@ -6,6 +6,8 @@ package org.squirrelframework.foundation.component;
  * 
  * @author Henry.He
  *
+ * name：SQRL单例标志接口
+ * note：使用 kotlin 的 object 改写的话，可以避免这种口头约定
  */
 public interface SquirrelSingleton {
 }

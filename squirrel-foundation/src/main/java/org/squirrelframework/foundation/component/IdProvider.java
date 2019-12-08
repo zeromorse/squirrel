@@ -4,6 +4,11 @@ import java.util.UUID;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+/**
+ * name：ID提供器
+ * desc：有 Default 和 UUID 两个策略
+ * note：个人认为使用枚举实现单例更好一些，但可能需要配合 {@link SquirrelSingleton} 维持同一性
+ */
 public interface IdProvider {
     String get();
     

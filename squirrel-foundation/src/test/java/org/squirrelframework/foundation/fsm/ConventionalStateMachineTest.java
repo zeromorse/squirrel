@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.squirrelframework.foundation.exception.TransitionException;
-import org.squirrelframework.foundation.fsm.annotation.ContextEvent;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextEvent;
 import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 
 import static org.hamcrest.MatcherAssert.assertThat;

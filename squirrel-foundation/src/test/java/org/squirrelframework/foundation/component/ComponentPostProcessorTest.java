@@ -15,6 +15,9 @@ import org.squirrelframework.foundation.component.SquirrelPostProcessor;
 import org.squirrelframework.foundation.component.SquirrelPostProcessorProvider;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 
+/**
+ * 测试 SquirrelPostProcessorProvider 作为后处理器的能力
+ */
 public class ComponentPostProcessorTest {
     
     @Test

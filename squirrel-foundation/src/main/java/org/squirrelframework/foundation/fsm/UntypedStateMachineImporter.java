@@ -6,6 +6,9 @@ import java.io.InputStream;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.util.TypeReference;
 
+/**
+ * desc：默认的状态机导入器
+ */
 public class UntypedStateMachineImporter {
     
     private final StateMachineImporter<UntypedStateMachine, Object, Object, Object> delegator = 

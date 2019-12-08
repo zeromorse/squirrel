@@ -4,8 +4,11 @@ import com.google.common.base.Stopwatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.squirrelframework.foundation.exception.TransitionException;
-import org.squirrelframework.foundation.fsm.annotation.*;
+import org.squirrelframework.foundation.fsm.annotation.hook.*;
 
+/**
+ * desc：状态机日志记录器
+ */
 public class StateMachineLogger {
     
     private static final Logger logger = LoggerFactory.getLogger(StateMachineLogger.class);

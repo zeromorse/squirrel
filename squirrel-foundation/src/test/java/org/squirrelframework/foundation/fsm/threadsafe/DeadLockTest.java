@@ -76,7 +76,7 @@ public class DeadLockTest {
         }
     }
     
-    @Test(timeout=100)
+    @Test(timeout=1000)
     public void testDeadLockFixed() {
         final UntypedStateMachine[] fsm = getTestingFSMInstances();
         final CountDownLatch eventCondition = new CountDownLatch(2);

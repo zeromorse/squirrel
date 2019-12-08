@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.fsm.StateMachine.TransitionDeclinedEvent;
-import org.squirrelframework.foundation.fsm.annotation.*;
+import org.squirrelframework.foundation.fsm.annotation.structure.*;
 import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 
 import java.util.List;

@@ -8,6 +8,9 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+/**
+ * desc：记录执行时间
+ */
 @Retention(RUNTIME)
 @Target({METHOD, TYPE})
 @Documented

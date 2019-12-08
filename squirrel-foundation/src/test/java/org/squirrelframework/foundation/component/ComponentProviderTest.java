@@ -8,6 +8,9 @@ import org.squirrelframework.foundation.component.impl.StudentImpl;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+/**
+ * 测试组件内部的大工厂：SquirrelProvider
+ */
 public class ComponentProviderTest {
 
     @After

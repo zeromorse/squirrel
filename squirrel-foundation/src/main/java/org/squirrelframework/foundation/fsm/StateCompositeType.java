@@ -5,6 +5,8 @@ package org.squirrelframework.foundation.fsm;
  * or parallel (orthogonal). {@code StateCompositeType} defines the type of composite state.
  * 
  * @author Henry.He
+ *
+ * desc：状态组合方式，顺序、并行
  */
 public enum StateCompositeType {
     /**

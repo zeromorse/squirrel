@@ -1,5 +1,8 @@
 package org.squirrelframework.foundation.fsm;
 
+/**
+ * desc：匿名动作
+ */
 public abstract class AnonymousAction<T extends StateMachine<T, S, E, C>, S, E, C> 
     implements Action<T, S, E, C> {
 

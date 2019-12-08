@@ -5,6 +5,7 @@ package org.squirrelframework.foundation.fsm;
  * 
  * @author Henry.He
  *
+ * desc：状态机的状态
  */
 public enum StateMachineStatus {
 

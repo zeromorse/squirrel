@@ -9,6 +9,7 @@ import org.squirrelframework.foundation.component.SquirrelSingleton;
  * 
  * @author Henry.He
  *
+ * desc：转化器的提供者
  */
 public interface ConverterProvider extends SquirrelComponent, SquirrelSingleton {
 

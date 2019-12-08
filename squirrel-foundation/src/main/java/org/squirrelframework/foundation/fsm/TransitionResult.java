@@ -11,6 +11,8 @@ import java.util.List;
  * @param <S> state type
  * @param <E> event type
  * @param <C> context type
+ *
+ * desc：迁移结果
  */
 public interface TransitionResult<T extends StateMachine<T, S, E, C>, S, E, C> {
     /**

@@ -5,6 +5,7 @@ package org.squirrelframework.foundation.fsm;
  * 
  * @author Henry.He
  *
+ * desc：导出为 dot 文件的访问者
  */
 public interface DotVisitor extends Visitor {
     

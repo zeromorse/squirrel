@@ -3,6 +3,8 @@ package org.squirrelframework.foundation.fsm;
 /**
  * Visit state machine model structure and export SCXML definition.
  * @author Henry.He
+ *
+ * desc：导出为scxml的访问者
  */
 public interface SCXMLVisitor extends Visitor {
 

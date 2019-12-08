@@ -9,6 +9,8 @@ package org.squirrelframework.foundation.fsm;
  * @param <S> state type
  * @param <E> event type
  * @param <C> context type
+ *
+ * desc：状态的上下文
  */
 public interface StateContext<T extends StateMachine<T, S, E, C>, S, E, C> {
     

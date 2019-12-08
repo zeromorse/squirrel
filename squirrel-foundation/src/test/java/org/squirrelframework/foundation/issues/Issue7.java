@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.squirrelframework.foundation.fsm.AnonymousAction;
 import org.squirrelframework.foundation.fsm.StateMachineBuilder;
 import org.squirrelframework.foundation.fsm.StateMachineBuilderFactory;
-import org.squirrelframework.foundation.fsm.annotation.ContextInsensitive;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextInsensitive;
 import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 
 public class Issue7 {

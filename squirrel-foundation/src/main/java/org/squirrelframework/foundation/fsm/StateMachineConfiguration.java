@@ -6,6 +6,8 @@ import org.squirrelframework.foundation.component.SquirrelSingleton;
 /**
  * This class is used to configure state machine runtime behavior
  * @author Henry.He
+ *
+ * desc：配置状态机运行时行为
  */
 public class StateMachineConfiguration implements SquirrelSingleton {
     

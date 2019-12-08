@@ -1,5 +1,8 @@
 package org.squirrelframework.foundation.fsm;
 
+/**
+ * desc：迁移的优先级
+ */
 public interface TransitionPriority {
 
     public static final int NORMAL = 1;

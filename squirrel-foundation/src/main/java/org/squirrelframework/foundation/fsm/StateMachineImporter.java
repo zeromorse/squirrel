@@ -3,6 +3,9 @@ package org.squirrelframework.foundation.fsm;
 import java.io.File;
 import java.io.InputStream;
 
+/**
+ * desc：状态机导入门面
+ */
 public interface StateMachineImporter<T extends StateMachine<T, S, E, C>, S, E, C> {
     
     StateMachineBuilder<T, S, E, C> importFromString(String content);

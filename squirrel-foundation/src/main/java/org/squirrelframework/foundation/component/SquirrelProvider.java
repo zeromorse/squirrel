@@ -14,6 +14,8 @@ import org.squirrelframework.foundation.util.TypeReference;
  * 
  * @author Henry.He
  *
+ * name：SQRL中心工厂
+ * desc：持有类信息，负责实例的统一创建
  */
 public class SquirrelProvider implements SquirrelSingleton {
 
@@ -27,6 +29,7 @@ public class SquirrelProvider implements SquirrelSingleton {
         SquirrelProvider.instance = instance;
     }
 
+    // 类 -> 实现类
     private Map<Class<?>, Class<?>> implementationRegistry = new ConcurrentHashMap<Class<?>, Class<?>>();
 
     public <T> T newInstance(TypeReference<T> typeRef) {

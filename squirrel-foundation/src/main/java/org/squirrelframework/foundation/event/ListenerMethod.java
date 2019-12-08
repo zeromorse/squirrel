@@ -9,6 +9,10 @@ import org.squirrelframework.foundation.util.ReflectUtils;
 
 import com.google.common.base.Preconditions;
 
+/**
+ * name：监听器方法
+ * desc：保存有监听方法，并负责同步或异步地执行
+ */
 public class ListenerMethod {
     
     private final Class<?> eventType;

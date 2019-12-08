@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.CyclicBarrier;
 
 import org.junit.Test;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 import org.squirrelframework.foundation.fsm.threadsafe.BarrierThread;
 

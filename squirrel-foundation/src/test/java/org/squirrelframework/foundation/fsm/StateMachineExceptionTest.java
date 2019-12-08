@@ -7,11 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.squirrelframework.foundation.exception.SquirrelRuntimeException;
 import org.squirrelframework.foundation.exception.TransitionException;
-import org.squirrelframework.foundation.fsm.annotation.ContextEvent;
-import org.squirrelframework.foundation.fsm.annotation.ContextInsensitive;
-import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
-import org.squirrelframework.foundation.fsm.annotation.Transit;
-import org.squirrelframework.foundation.fsm.annotation.Transitions;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextEvent;
+import org.squirrelframework.foundation.fsm.annotation.structure.ContextInsensitive;
+import org.squirrelframework.foundation.fsm.annotation.structure.StateMachineParameters;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transit;
+import org.squirrelframework.foundation.fsm.annotation.structure.Transitions;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 public class StateMachineExceptionTest {

@@ -8,6 +8,8 @@ import org.squirrelframework.foundation.component.SquirrelComponent;
  * @author Henry.He
  *
  * @param <T> type of converted object
+ *
+ * desc：定义状态/事件类型同字符串的转化
  */
 public interface Converter<T> extends SquirrelComponent {
     

@@ -14,7 +14,7 @@ import org.squirrelframework.foundation.component.SquirrelPostProcessorProvider;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.exception.SquirrelRuntimeException;
 import org.squirrelframework.foundation.fsm.*;
-import org.squirrelframework.foundation.fsm.annotation.*;
+import org.squirrelframework.foundation.fsm.annotation.structure.*;
 import org.squirrelframework.foundation.fsm.builder.*;
 import org.squirrelframework.foundation.util.DuplicateChecker;
 import org.squirrelframework.foundation.util.ReflectUtils;
@@ -27,6 +27,9 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * desc：状态机构建器实现
+ */
 public class StateMachineBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C> implements StateMachineBuilder<T, S, E, C> {
 
     static {
@@ -34,7 +37,8 @@ public class StateMachineBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C
     }
     
     private static final Logger logger = LoggerFactory.getLogger(StateMachineBuilderImpl.class);
-    
+
+    // 状态缓存
     private final Map<S, MutableState<T, S, E, C>> states = Maps.newConcurrentMap();
     
     private final Class<? extends T> stateMachineImplClazz;
@@ -44,7 +48,8 @@ public class StateMachineBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C
     private final Class<E> eventClazz;
     
     private final Class<C> contextClazz;
-    
+
+    // Builder是否准备好了
     private boolean prepared = false;
     
     private final Constructor<? extends T> constructor;

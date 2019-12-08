@@ -12,6 +12,8 @@ import org.squirrelframework.foundation.fsm.StateMachine;
  * @param <S> type of State
  * @param <E> type of Event
  * @param <C> type of Context
+ *
+ * desc：添加一个状态迁移，when...perform 子句中的一部分
  */
 public interface On<T extends StateMachine<T, S, E, C>, S, E, C> extends When<T, S, E, C> {
     /**

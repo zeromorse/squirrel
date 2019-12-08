@@ -6,6 +6,8 @@ package org.squirrelframework.foundation.fsm;
  * @author Henry.He
  *
  * @param <C> type of context
+ *
+ * desc：触发迁移需要满足的条件
  */
 public interface Condition<C> {
     /**

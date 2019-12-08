@@ -25,8 +25,11 @@ import org.squirrelframework.foundation.fsm.StateMachineData;
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
 import org.squirrelframework.foundation.fsm.UntypedStateMachineBuilder;
 import org.squirrelframework.foundation.fsm.annotation.AsyncExecute;
-import org.squirrelframework.foundation.fsm.annotation.OnTransitionBegin;
+import org.squirrelframework.foundation.fsm.annotation.hook.OnTransitionBegin;
 
+/**
+ * TODO dyl 2019-10-27 并发编程功力不够，暂时忽略
+ */
 @RunWith(Parameterized.class)
 public class ConcurrentEventTest {
     
