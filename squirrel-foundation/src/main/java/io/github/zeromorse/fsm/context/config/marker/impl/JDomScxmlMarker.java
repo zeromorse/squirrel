@@ -1,8 +1,8 @@
 package io.github.zeromorse.fsm.context.config.marker.impl;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.marker.ScxmlMarker;
-import com.sankuai.meituan.waimai.config.fsm.agent.exception.CoreErrorCodes;
-import com.sankuai.meituan.waimai.config.fsm.agent.exception.FsmAgentRuntimeException;
+import io.github.zeromorse.fsm.context.config.marker.ScxmlMarker;
+import io.github.zeromorse.fsm.exception.CoreErrorCodes;
+import io.github.zeromorse.fsm.exception.FsmAgentRuntimeException;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;

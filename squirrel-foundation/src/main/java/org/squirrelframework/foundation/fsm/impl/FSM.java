@@ -121,8 +121,8 @@ abstract class FSM {
                 setAccepted(accepted).setTargetState(targetState).setParent(parent);
     }
     
-    static <C> Condition<C> newMvelCondition(String expression, MvelScriptManager scriptManager) {
-        return SquirrelProvider.getInstance().newInstance(new TypeReference<MvelConditionImpl<C>>() {}, 
+    static <T extends StateMachine<T, S, E, C>, S, E, C> Condition<T, S, E, C> newMvelCondition(String expression, MvelScriptManager scriptManager) {
+        return SquirrelProvider.getInstance().newInstance(new TypeReference<MvelConditionImpl<T, S, E, C>>() {},
                 new Class<?>[]{String.class, MvelScriptManager.class}, new Object[]{expression, scriptManager});
     }
     

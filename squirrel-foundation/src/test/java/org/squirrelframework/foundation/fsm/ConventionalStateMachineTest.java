@@ -203,9 +203,10 @@ public class ConventionalStateMachineTest extends AbstractStateMachineTest {
         builder.internalTransition().within(A).on(InternalA);
         builder.externalTransition().from(B).to(C).on(ToC).callMethod("fromBToCOnToC");
         builder.externalTransition().from(C).to(D).on(ToD).whenMvel("MvelExp:::(context!=null && context>80)");
-        builder.externalTransition().from(C).to(D).on(ToD).when(new Condition<Integer>() {
+        builder.externalTransition().from(C).to(D).on(ToD).when(new Condition<ConventionalStateMachine, TestState, TestEvent, Integer>() {
+
             @Override
-            public boolean isSatisfied(Integer context) {
+            public boolean isSatisfied(TestState from, TestState to, TestEvent event, Integer context, ConventionalStateMachine stateMachine) {
                 return context!=null && context>=60 && context<=80;
             }
 

@@ -21,7 +21,7 @@ public interface On<T extends StateMachine<T, S, E, C>, S, E, C> extends When<T,
      * @param condition transition condition
      * @return When clause builder
      */
-    When<T, S, E, C> when(Condition<C> condition);
+    When<T, S, E, C> when(Condition<T, S, E, C> condition);
     
     /**
      * Add condition for the transition

@@ -1,10 +1,7 @@
 package org.squirrelframework.foundation.fsm.snake;
 
 import org.squirrelframework.foundation.component.SquirrelProvider;
-import org.squirrelframework.foundation.fsm.AnonymousCondition;
-import org.squirrelframework.foundation.fsm.DotVisitor;
-import org.squirrelframework.foundation.fsm.HistoryType;
-import org.squirrelframework.foundation.fsm.TransitionType;
+import org.squirrelframework.foundation.fsm.*;
 import org.squirrelframework.foundation.fsm.annotation.structure.*;
 import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 import org.squirrelframework.foundation.fsm.snake.SnakeController.SnakeEvent;
@@ -15,7 +12,7 @@ import java.util.Random;
 
 /**
  * This is an example on how to use state machine to build a game controller. The state machine was defined in declarative manner.
- * 
+ *
  * @author Henry.He
  *
  */
@@ -59,9 +56,10 @@ public class SnakeController extends AbstractUntypedStateMachine {
         PRESS_START, TURN_UP, TURN_LEFT, TURN_RIGHT, TURN_DOWN, MOVE_AHEAD, PRESS_PAUSE
     }
 
-    public static class ContinueRunningCondition extends AnonymousCondition<SnakeModel> {
+    public static class ContinueRunningCondition extends AnonymousCondition<UntypedStateMachine, Object, Object, Object> {
         @Override
-        public boolean isSatisfied(SnakeModel context) {
+        public boolean isSatisfied(Object from, Object to, Object event, Object ctx, UntypedStateMachine stateMachine) {
+            SnakeModel context = (SnakeModel) ctx;
             Point nextPoint = computeNextPoint(context.peekFirst(), context.getDirection());
             boolean insideBorder = nextPoint.x >= 0 && nextPoint.x < GameConfigure.COL_COUNT &&
                     nextPoint.y >= 0 && nextPoint.y < GameConfigure.ROW_COUNT;

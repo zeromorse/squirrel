@@ -1,0 +1,46 @@
+{
+  "id": 1,
+  "type": "archive",
+  "grayCondition": "gray",
+  "behavior": {
+    "states": [
+      {
+        "name": "off",
+        "exitActions": [
+          "exit","exit2"
+        ],
+        "entryActions": [
+          "entry","entry2"
+        ]
+      },
+      {
+        "name": "on",
+        "exitActions": [
+          "exit"
+        ],
+        "entryActions": [
+          "entry", "entry2"
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "to": "on",
+        "from": "off",
+        "event": "flip",
+        "condition": "condition",
+        "transitActions": [
+          "transit", "transit2"
+        ]
+      },
+      {
+        "to": "off",
+        "from": "on",
+        "event": "flip",
+        "transitActions": [
+          "transit"
+        ]
+      }
+    ]
+  }
+}

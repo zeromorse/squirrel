@@ -1,8 +1,8 @@
 package io.github.zeromorse.fsm.context.model;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.FsmAgentConfiguration;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmBehavior;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FteTriple;
+import io.github.zeromorse.fsm.context.FsmAgentConfiguration;
+import io.github.zeromorse.fsm.context.config.cache.FsmBehavior;
+import io.github.zeromorse.fsm.context.config.cache.FteTriple;
 import org.squirrelframework.foundation.fsm.AnonymousCondition;
 
 public abstract class GenericCondition extends AnonymousCondition<GenericStateMachine, String, String, GenericContext> {

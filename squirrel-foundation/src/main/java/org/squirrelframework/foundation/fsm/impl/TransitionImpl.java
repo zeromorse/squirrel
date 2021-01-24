@@ -14,7 +14,7 @@ class TransitionImpl<T extends StateMachine<T, S, E, C>, S, E, C> implements Mut
     
     private final Actions<T, S, E, C> actions = FSM.newActions();
     
-    private Condition<C> condition = Conditions.always();
+    private Condition<T, S, E, C> condition = Conditions.always();
     
     private TransitionType type = TransitionType.EXTERNAL;
     
@@ -67,12 +67,12 @@ class TransitionImpl<T extends StateMachine<T, S, E, C>, S, E, C> implements Mut
     }
 
     @Override
-    public Condition<C> getCondition() {
+    public Condition<T, S, E, C> getCondition() {
         return condition;
     }
 
     @Override
-    public void setCondition(Condition<C> condition) {
+    public void setCondition(Condition<T, S, E, C> condition) {
         this.condition = condition;
     }
 
@@ -190,7 +190,7 @@ class TransitionImpl<T extends StateMachine<T, S, E, C>, S, E, C> implements Mut
                 getSourceState().getStateId()!=targetState.getStateId()) {
             return;
         }
-        if(condition.isSatisfied(stateContext.getContext())) {
+        if (condition.isSatisfied(getSourceState().getStateId(), getTargetState().getStateId(), getEvent(), stateContext.getContext(), stateContext.getStateMachine().getThis())) {
             ImmutableState<T, S, E, C> newState = stateContext.getSourceState();
             if(type==TransitionType.INTERNAL) {
                 newState = transit(stateContext);

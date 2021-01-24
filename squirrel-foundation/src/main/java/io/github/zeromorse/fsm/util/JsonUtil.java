@@ -3,8 +3,8 @@ package io.github.zeromorse.fsm.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sankuai.meituan.waimai.config.fsm.agent.exception.CoreErrorCodes;
-import com.sankuai.meituan.waimai.config.fsm.agent.exception.FsmAgentRuntimeException;
+import io.github.zeromorse.fsm.exception.CoreErrorCodes;
+import io.github.zeromorse.fsm.exception.FsmAgentRuntimeException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

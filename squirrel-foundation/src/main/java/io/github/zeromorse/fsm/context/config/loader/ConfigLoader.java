@@ -1,8 +1,9 @@
 package io.github.zeromorse.fsm.context.config.loader;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.PostProcess;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.ConfigCache;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.marker.ScxmlMarker;
+
+import io.github.zeromorse.fsm.context.PostProcess;
+import io.github.zeromorse.fsm.context.config.cache.ConfigCache;
+import io.github.zeromorse.fsm.context.config.marker.ScxmlMarker;
 
 /**
  * 配置加载器

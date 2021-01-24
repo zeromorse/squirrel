@@ -1,8 +1,8 @@
 package io.github.zeromorse.fsm.context.model.impl;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.GenericCondition;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.GenericContext;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.GenericStateMachine;
+import io.github.zeromorse.fsm.context.model.GenericCondition;
+import io.github.zeromorse.fsm.context.model.GenericContext;
+import io.github.zeromorse.fsm.context.model.GenericStateMachine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

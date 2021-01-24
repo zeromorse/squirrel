@@ -1,6 +1,6 @@
 package io.github.zeromorse.fsm.context.model;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmVersion;
+import io.github.zeromorse.fsm.context.config.cache.FsmVersion;
 import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 
 public class GenericStateMachine extends AbstractStateMachine<GenericStateMachine, String, String, GenericContext> {

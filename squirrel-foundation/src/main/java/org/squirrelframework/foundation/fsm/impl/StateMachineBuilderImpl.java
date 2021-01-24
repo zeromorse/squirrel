@@ -301,11 +301,11 @@ public class StateMachineBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C
         return "*".equals(transit.from()) || "*".equals(transit.to()) || "*".equals(transit.on());
     }
     
-    private Action<T, S, E, C> warpConditionalAction(Action<T, S, E, C> action, final Condition<C> condition) {
+    private Action<T, S, E, C> warpConditionalAction(Action<T, S, E, C> action, final Condition<T, S, E, C> condition) {
         return new ActionWrapper<T, S, E, C>(action) {
             @Override
             public void execute(S from, S to, E event, C context, T stateMachine) {
-                if(condition.isSatisfied(context)) {
+                if(condition.isSatisfied(from, to, event, context, stateMachine)) {
                     super.execute(from, to, event, context, stateMachine);
                 }
             }
@@ -324,12 +324,12 @@ public class StateMachineBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C
         if(!transit.callMethod().isEmpty()) {
             Action<T, S, E, C> action = FSM.newMethodCallActionProxy(transit.callMethod(), executionContext);
             if(!transit.whenMvel().isEmpty()) {
-                final Condition<C> condition = FSM.newMvelCondition(transit.whenMvel(), scriptManager);
+                final Condition<T, S, E, C> condition = FSM.newMvelCondition(transit.whenMvel(), scriptManager);
                 action = warpConditionalAction(action, condition);
             }
             if(transit.when()!=Conditions.Always.class) {
                 @SuppressWarnings("unchecked")
-                final Condition<C> condition = ReflectUtils.newInstance(transit.when());
+                final Condition<T, S, E, C> condition = ReflectUtils.newInstance(transit.when());
                 action = warpConditionalAction(action, condition);
             }
             deferBoundActionInfo.setActions(Collections.singletonList(action));
@@ -394,12 +394,12 @@ public class StateMachineBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C
             toBuilder = isTargetFinal ? fromBuilder.toFinal(toState) : fromBuilder.to(toState);
         } 
         On<T, S, E, C> onBuilder = toBuilder.on(event);
-        Condition<C> c = null;
+        Condition<T, S, E, C> c = null;
         try {
             if(transit.when()!=Conditions.Always.class) {
                 Constructor<?> constructor = transit.when().getDeclaredConstructor();
                 constructor.setAccessible(true);
-                c = (Condition<C>)constructor.newInstance();
+                c = (Condition<T, S, E, C>)constructor.newInstance();
             } else if(StringUtils.isNotEmpty(transit.whenMvel())) {
                 c = FSM.newMvelCondition(transit.whenMvel(), scriptManager);
             }

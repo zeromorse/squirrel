@@ -247,7 +247,7 @@ public class StateMachineImporterImpl<T extends StateMachine<T, S, E, C>, S, E, 
             String condContent = conditionScript.substring(condPos+1);
             if(condSchema.equals("instance")) {
                 // NOTE: user should provider no-args constructor for condition always
-                Condition<C> cond = newInstance(condContent);
+                Condition<T, S, E, C> cond = newInstance(condContent);
                 getCurrentTranstionBuilder().when(cond);
             } else if(condSchema.equals("mvel")) {
                 getCurrentTranstionBuilder().whenMvel(condContent);

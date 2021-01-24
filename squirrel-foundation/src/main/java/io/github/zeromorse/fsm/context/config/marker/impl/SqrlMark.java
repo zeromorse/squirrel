@@ -1,12 +1,12 @@
 package io.github.zeromorse.fsm.context.config.marker.impl;
 
 import com.google.common.collect.Lists;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.GenericContext;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.GenericStateMachine;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.impl.GenericEntryAction;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.impl.GenericExitAction;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.impl.GenericTransitAction;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.model.impl.GenericTransitCondition;
+import io.github.zeromorse.fsm.context.model.GenericContext;
+import io.github.zeromorse.fsm.context.model.GenericStateMachine;
+import io.github.zeromorse.fsm.context.model.impl.GenericEntryAction;
+import io.github.zeromorse.fsm.context.model.impl.GenericExitAction;
+import io.github.zeromorse.fsm.context.model.impl.GenericTransitAction;
+import io.github.zeromorse.fsm.context.model.impl.GenericTransitCondition;
 import org.jdom2.Attribute;
 import org.jdom2.Element;
 import org.jdom2.Namespace;

@@ -56,9 +56,10 @@ public class SimpleCssParser extends AbstractStateMachine<SimpleCssParser, Parse
         builder = StateMachineBuilderFactory.create(
                 SimpleCssParser.class, ParserState.class, Character.class, ParserContext.class);
         builder.externalTransition().from(ParserState.RULE).to(ParserState.COMMENT).on(SLASH).when(
-                new Condition<ParserContext>() {
+                new Condition<SimpleCssParser, ParserState, Character, ParserContext>() {
+
                     @Override
-                    public boolean isSatisfied(ParserContext context) {
+                    public boolean isSatisfied(ParserState from, ParserState to, Character event, ParserContext context, SimpleCssParser stateMachine) {
                         return context.nextChar!=null && context.nextChar.equals(STAR);
                     }
 
@@ -69,9 +70,9 @@ public class SimpleCssParser extends AbstractStateMachine<SimpleCssParser, Parse
                 });
         
         builder.externalTransition().from(ParserState.COMMENT).to(ParserState.RULE).on(STAR).when(
-                new Condition<ParserContext>() {
+                new Condition<SimpleCssParser, ParserState, Character, ParserContext>() {
                     @Override
-                    public boolean isSatisfied(ParserContext context) {
+                    public boolean isSatisfied(ParserState from, ParserState to, Character event, ParserContext context, SimpleCssParser stateMachine) {
                         return context.nextChar!=null && context.nextChar.equals(SLASH);
                     }
 

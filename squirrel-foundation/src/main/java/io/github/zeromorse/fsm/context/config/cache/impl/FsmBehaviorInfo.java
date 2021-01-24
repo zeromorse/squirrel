@@ -3,6 +3,7 @@ package io.github.zeromorse.fsm.context.config.cache.impl;
 import io.github.zeromorse.fsm.context.config.cache.FsmBehavior;
 import io.github.zeromorse.fsm.context.config.cache.FteTriple;
 
+import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -23,11 +24,6 @@ public class FsmBehaviorInfo implements FsmBehavior {
 
     public List<String> getTransitAction(FteTriple fteTriple) {
         return transitActions.get(fteTriple);
-    }
-
-    @Override
-    public String getTransitCondition(FteTriple fteTriple) {
-        return null;
     }
 
     public List<String> getEntryAction(String state) {

@@ -1,0 +1,55 @@
+{
+  "id": 3,
+  "type": "gray",
+  "grayCondition": "hosting#grayJudge:judge",
+  "behavior": {
+    "states": [
+      {
+        "name": "off",
+        "exitActions": [
+          "hosting#exit",
+          "hosting#exit",
+          "hosting#exit"
+        ],
+        "entryActions": [
+          "hosting#enter",
+          "hosting#enter",
+          "hosting#enter"
+        ]
+      },
+      {
+        "name": "on",
+        "exitActions": [
+          "hosting#exit",
+          "hosting#exit"
+        ],
+        "entryActions": [
+          "hosting#enter",
+          "hosting#enter"
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "to": "on",
+        "from": "off",
+        "event": "flip",
+        "condition": "hosting#transitCond:condition",
+        "transitActions": [
+          "hosting#sayHello",
+          "hosting#sayHello:firstName,lastName"
+        ]
+      },
+      {
+        "to": "off",
+        "from": "on",
+        "event": "flip",
+        "condition": "hosting#transitCond:condition",
+        "transitActions": [
+          "hosting#sayHello:firstName,lastName",
+          "hosting#sayHello"
+        ]
+      }
+    ]
+  }
+}

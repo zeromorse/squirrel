@@ -138,7 +138,7 @@ class MultiTransitionBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C> im
     }
 
     @Override
-    public When<T, S, E, C> when(Condition<C> condition) {
+    public When<T, S, E, C> when(Condition<T, S, E, C> condition) {
         for(MutableTransition<T, S, E, C> transition : transitions) {
             transition.setCondition(condition);
         }
@@ -148,7 +148,7 @@ class MultiTransitionBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C> im
     @Override
     public When<T, S, E, C> whenMvel(String expression) {
         for(MutableTransition<T, S, E, C> transition : transitions) {
-            Condition<C> cond = FSM.newMvelCondition(expression, executionContext.getScriptManager());
+            Condition<T, S, E, C> cond = FSM.newMvelCondition(expression, executionContext.getScriptManager());
             transition.setCondition(cond);
         }
         return this;

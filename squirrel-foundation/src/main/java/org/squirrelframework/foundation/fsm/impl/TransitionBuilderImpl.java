@@ -86,14 +86,14 @@ class TransitionBuilderImpl<T extends StateMachine<T, S, E, C>, S, E, C> impleme
     }
 
     @Override
-    public When<T, S, E, C> when(Condition<C> condition) {
+    public When<T, S, E, C> when(Condition<T, S, E, C> condition) {
         transition.setCondition(condition);
         return this;
     }
     
     @Override
     public When<T, S, E, C> whenMvel(String expression) {
-        Condition<C> cond = FSM.newMvelCondition(expression, executionContext.getScriptManager());
+        Condition<T, S, E, C> cond = FSM.newMvelCondition(expression, executionContext.getScriptManager());
         transition.setCondition(cond);
         return this;
     }

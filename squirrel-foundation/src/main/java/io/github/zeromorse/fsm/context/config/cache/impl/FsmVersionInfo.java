@@ -1,7 +1,8 @@
 package io.github.zeromorse.fsm.context.config.cache.impl;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmBehavior;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmVersion;
+
+import io.github.zeromorse.fsm.context.config.cache.FsmBehavior;
+import io.github.zeromorse.fsm.context.config.cache.FsmVersion;
 
 /**
  * 状态机版本默认实现

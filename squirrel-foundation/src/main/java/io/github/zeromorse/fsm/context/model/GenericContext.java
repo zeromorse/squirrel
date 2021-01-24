@@ -1,7 +1,8 @@
 package io.github.zeromorse.fsm.context.model;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.FsmAgentConfiguration;
-import com.sankuai.meituan.waimai.config.fsm.agent.facade.FsmMetaInfo;
+
+import io.github.zeromorse.fsm.context.FsmAgentConfiguration;
+import io.github.zeromorse.fsm.facade.FsmMetaInfo;
 
 public class GenericContext {
     private FsmAgentConfiguration configuration;

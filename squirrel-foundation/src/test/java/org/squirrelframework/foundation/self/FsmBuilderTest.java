@@ -51,9 +51,9 @@ public class FsmBuilderTest {
                 logger.append(heyB);
             }
         });
-        builder.externalTransition().from(MyState.A).to(MyState.B).on(MyEvent.ab).when(new AnonymousCondition<MyContext>() {
+        builder.externalTransition().from(MyState.A).to(MyState.B).on(MyEvent.ab).when(new AnonymousCondition<MyStateMachine, MyState, MyEvent, MyContext>() {
             @Override
-            public boolean isSatisfied(MyContext context) {
+            public boolean isSatisfied(MyState from, MyState to, MyEvent event, MyContext context, MyStateMachine stateMachine) {
                 logger.append(checkAB);
                 return true;
             }
@@ -99,9 +99,9 @@ public class FsmBuilderTest {
 
         builder.externalTransitions()
                 .from(MyState.A).toAmong(MyState.B, MyState.C).onEach(MyEvent.ab, MyEvent.ac)
-                .when(new AnonymousCondition<MyContext>() {
+                .when(new AnonymousCondition<MyStateMachine, MyState, MyEvent, MyContext>() {
                     @Override
-                    public boolean isSatisfied(MyContext context) {
+                    public boolean isSatisfied(MyState from, MyState to, MyEvent event, MyContext context, MyStateMachine stateMachine) {
                         logger.append("everyone is welcome!");
                         return true;
                     }

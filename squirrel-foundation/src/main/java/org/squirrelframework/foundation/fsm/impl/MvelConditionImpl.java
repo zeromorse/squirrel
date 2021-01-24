@@ -8,8 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.squirrelframework.foundation.fsm.Condition;
 import org.squirrelframework.foundation.fsm.MvelScriptManager;
+import org.squirrelframework.foundation.fsm.StateMachine;
 
-class MvelConditionImpl<C> implements Condition<C> {
+class MvelConditionImpl<T extends StateMachine<T, S, E, C>, S, E, C> implements Condition<T, S, E, C> {
     
     private static final Logger logger = LoggerFactory.getLogger(MvelConditionImpl.class);
     
@@ -38,7 +39,7 @@ class MvelConditionImpl<C> implements Condition<C> {
     }
 
     @Override
-    public boolean isSatisfied(C context) {
+    public boolean isSatisfied(S from, S to, E event, C context, T stateMachine) {
         try {
             Map<String, Object> variables = new HashMap<String, Object>();
             variables.put(MvelScriptManager.VAR_CONTEXT, context);

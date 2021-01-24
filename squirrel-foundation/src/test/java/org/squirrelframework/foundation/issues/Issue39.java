@@ -37,9 +37,9 @@ public class Issue39 {
         StateMachineBuilder<AuthFlowStateMachine, String, Object, Context> builder = StateMachineBuilderFactory.create(AuthFlowStateMachine.class, String.class, Object.class, Context.class);
         TestAction action1 = new TestAction();
         TestAction action2 = new TestAction();
-        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<Context>() {
+        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<AuthFlowStateMachine, String, Object, Context> () {
             @Override
-            public boolean isSatisfied(Context context) {
+            public boolean isSatisfied(String from, String to, Object event, Context context, AuthFlowStateMachine stateMachine) {
                 return true;
             }
             @Override
@@ -47,12 +47,11 @@ public class Issue39 {
                 return "duplicateName";
             }
         }).perform(action1);
-        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<Context>() {
+        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<AuthFlowStateMachine, String, Object, Context> () {
             @Override
-            public boolean isSatisfied(Context context) {
+            public boolean isSatisfied(String from, String to, Object event, Context context, AuthFlowStateMachine stateMachine) {
                 return true;
             }
-
             @Override
             public String name() {
                 return "duplicateName";
@@ -66,9 +65,9 @@ public class Issue39 {
         StateMachineBuilder<AuthFlowStateMachine, String, Object, Context> builder = StateMachineBuilderFactory.create(AuthFlowStateMachine.class, String.class, Object.class, Context.class);
         TestAction action1 = new TestAction();
         TestAction action2 = new TestAction();
-        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<Context>() {
+        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<AuthFlowStateMachine, String, Object, Context> () {
             @Override
-            public boolean isSatisfied(Context context) {
+            public boolean isSatisfied(String from, String to, Object event, Context context, AuthFlowStateMachine stateMachine) {
                 return true;
             }
 
@@ -77,9 +76,9 @@ public class Issue39 {
                 return "cond1";
             }
         }).perform(action1);
-        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<Context>() {
+        builder.externalTransition().from("initial").to("second").on("Start").when(new Condition<AuthFlowStateMachine, String, Object, Context> () {
             @Override
-            public boolean isSatisfied(Context context) {
+            public boolean isSatisfied(String from, String to, Object event, Context context, AuthFlowStateMachine stateMachine) {
                 return true;
             }
 

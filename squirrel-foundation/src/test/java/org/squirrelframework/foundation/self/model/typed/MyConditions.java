@@ -11,17 +11,18 @@ public final class MyConditions {
     public static final Satisfied satisfied = new Satisfied();
     public static final Unsatisfied unsatisfied = new Unsatisfied();
 
-    private static class Satisfied extends AnonymousCondition<MyContext> {
+    private static class Satisfied extends AnonymousCondition<MyStateMachine, MyState, MyEvent, MyContext> {
         @Override
-        public boolean isSatisfied(MyContext context) {
+        public boolean isSatisfied(MyState from, MyState to, MyEvent event, MyContext context, MyStateMachine stateMachine) {
             log.info("satisfied");
             return true;
         }
     }
 
-    private static class Unsatisfied extends AnonymousCondition<MyContext> {
+    private static class Unsatisfied extends AnonymousCondition<MyStateMachine, MyState, MyEvent, MyContext> {
+
         @Override
-        public boolean isSatisfied(MyContext context) {
+        public boolean isSatisfied(MyState from, MyState to, MyEvent event, MyContext context, MyStateMachine stateMachine) {
             log.info("unsatisfied");
             return false;
         }

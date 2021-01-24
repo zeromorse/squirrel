@@ -2,7 +2,7 @@ package io.github.zeromorse.fsm.facade;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import com.sankuai.meituan.waimai.config.fsm.agent.util.JsonUtil;
+import io.github.zeromorse.fsm.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

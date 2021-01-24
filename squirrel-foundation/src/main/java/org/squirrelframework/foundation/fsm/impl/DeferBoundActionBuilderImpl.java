@@ -24,7 +24,7 @@ public class DeferBoundActionBuilderImpl<T extends StateMachine<T, S, E, C>, S, 
 
     private DeferBoundActionInfo<T, S, E, C> deferBoundActionInfo;
 
-    private Condition<C> condition;
+    private Condition<T, S, E, C> condition;
 
     DeferBoundActionBuilderImpl(
             List<DeferBoundActionInfo<T, S, E, C>> deferBoundActionInfoList,
@@ -112,7 +112,7 @@ public class DeferBoundActionBuilderImpl<T extends StateMachine<T, S, E, C>, S, 
     }
 
     @Override
-    public When<T, S, E, C> when(Condition<C> condition) {
+    public When<T, S, E, C> when(Condition<T, S, E, C> condition) {
         this.condition = condition;
         return this;
     }
@@ -128,7 +128,7 @@ public class DeferBoundActionBuilderImpl<T extends StateMachine<T, S, E, C>, S, 
         return new ActionWrapper<T, S, E, C>(action) {
             @Override
             public void execute(S from, S to, E event, C context, T stateMachine) {
-                if (Conditions.isSatified(condition, context)) {
+                if (Conditions.isSatified(condition, from, to, event, context, stateMachine)) {
                     super.execute(from, to, event, context, stateMachine);
                 }
             }

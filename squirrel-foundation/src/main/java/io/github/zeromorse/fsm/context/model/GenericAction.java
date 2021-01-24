@@ -1,7 +1,7 @@
 package io.github.zeromorse.fsm.context.model;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.FsmAgentConfiguration;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmBehavior;
+import io.github.zeromorse.fsm.context.FsmAgentConfiguration;
+import io.github.zeromorse.fsm.context.config.cache.FsmBehavior;
 import org.squirrelframework.foundation.fsm.AnonymousAction;
 
 import java.util.List;

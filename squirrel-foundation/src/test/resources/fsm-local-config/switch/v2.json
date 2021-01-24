@@ -1,0 +1,51 @@
+{
+  "id": 2,
+  "type": "main",
+  "grayCondition": "noInvoke",
+  "behavior": {
+    "states": [
+      {
+        "name": "off",
+        "exitActions": [
+          "hosting#exit",
+          "hosting#exit"
+        ],
+        "entryActions": [
+          "hosting#enter",
+          "hosting#enter"
+        ]
+      },
+      {
+        "name": "on",
+        "exitActions": [
+          "hosting#exit"
+        ],
+        "entryActions": [
+          "hosting#enter"
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "to": "on",
+        "from": "off",
+        "event": "flip",
+        "condition": "hosting#transitCond:condition",
+        "transitActions": [
+          "hosting#sayHello",
+          "hosting#sayHello:personName"
+        ]
+      },
+      {
+        "to": "off",
+        "from": "on",
+        "event": "flip",
+        "condition": "hosting#transitCond:condition",
+        "transitActions": [
+          "hosting#sayHello:personName",
+          "hosting#sayHello"
+        ]
+      }
+    ]
+  }
+}

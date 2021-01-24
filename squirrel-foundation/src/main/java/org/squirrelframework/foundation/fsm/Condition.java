@@ -9,12 +9,11 @@ package org.squirrelframework.foundation.fsm;
  *
  * desc：触发迁移需要满足的条件
  */
-public interface Condition<C> {
+public interface Condition<T extends StateMachine<T, S, E, C>, S, E, C> {
     /**
-     * @param context context object
      * @return whether the context satisfied current condition
      */
-    boolean isSatisfied(C context);
+    boolean isSatisfied(S from, S to, E event, C context, T stateMachine);
     
     String name();
 }

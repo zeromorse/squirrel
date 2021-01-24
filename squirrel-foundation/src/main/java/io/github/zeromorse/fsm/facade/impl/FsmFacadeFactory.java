@@ -1,7 +1,8 @@
 package io.github.zeromorse.fsm.facade.impl;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.FsmAgentConfiguration;
-import com.sankuai.meituan.waimai.config.fsm.agent.facade.FsmFacade;
+
+import io.github.zeromorse.fsm.context.FsmAgentConfiguration;
+import io.github.zeromorse.fsm.facade.FsmFacade;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

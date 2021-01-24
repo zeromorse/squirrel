@@ -51,8 +51,8 @@ public interface ImmutableTransition<T extends StateMachine<T, S, E, C>, S, E, C
     /**
      * @return Condition of the transition
      */
-    Condition<C> getCondition();
-    
+    Condition<T, S, E, C> getCondition();
+
     /**
      * @return Event that can trigger the transition
      */

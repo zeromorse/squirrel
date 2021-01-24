@@ -67,9 +67,10 @@ public class DeclarativeStateMachineTest extends AbstractStateMachineTest {
         void terminate(Integer context);
     }
 
-    static class ExcellentCondition extends AnonymousCondition<Integer> {
+    static class ExcellentCondition extends AnonymousCondition<DeclarativeStateMachine, TestState, TestEvent, Integer> {
+
         @Override
-        public boolean isSatisfied(Integer context) {
+        public boolean isSatisfied(TestState from, TestState to, TestEvent event, Integer context, DeclarativeStateMachine stateMachine) {
             return context!=null && context>80;
         }
     }

@@ -1,7 +1,8 @@
 package io.github.zeromorse.fsm.context.config.cache.impl;
 
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmConfig;
-import com.sankuai.meituan.waimai.config.fsm.agent.context.config.cache.FsmVersion;
+
+import io.github.zeromorse.fsm.context.config.cache.FsmConfig;
+import io.github.zeromorse.fsm.context.config.cache.FsmVersion;
 
 import java.util.Collections;
 import java.util.Map;
